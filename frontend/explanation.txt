@@ -1,0 +1,130 @@
+DOCTALKER:
+ Certainly! Here’s a concise explanation you
+ could use for your interview:--
+**Project Name: Doctalker**
+ **Overview:**
+ Doctalker is an innovative web application
+ that allows users to interact with their PDF
+ documents in a conversational manner. Users
+ can upload PDFs, which are then processed
+ to enable chat-based queries about the
+ content of these documents.
+ **Key Features:**
+1. **File Upload and Management:**- Users can upload PDF files through a
+ user-friendly interface.- Files are stored in AWS S3 for secure and
+ scalable storage.- Metadata about each file, such as name
+ and URL, is saved in MongoDB.
+ 2. **Document Processing:**- Each uploaded file is associated with a
+ unique vector namespace using Pinecone, a
+ vector database, for efficient querying.- Files are indexed to support quick retrieval
+ of relevant information.
+ 3. **Interactive Querying:**
+- Users can query the content of their PDFs
+ by sending questions through a chat
+ interface.- The system uses embeddings and
+ vector-based search with Pinecone to find
+ relevant excerpts from the document.
+ 4. **AI Integration:**- Embeddings and responses are handled
+ using Google Generative AI for creating
+ contextually relevant answers.
+ **Technology Stack:**- **Frontend:** Built with React and Next.js,
+ providing a responsive and dynamic user
+ interface.- **Backend:** Utilizes Next.js API routes for
+ server-side functionality, including file
+uploads, querying, and interacting with
+ external services.- **Database:** MongoDB for storing file
+ metadata and user information.- **Vector Database:** Pinecone for handling
+ vector-based search queries.- **Cloud Storage:** AWS S3 for storing
+ uploaded PDFs.
+ **Development Highlights:**- **Performance Optimization:** Implemented
+ server-side rendering and static site
+ generation for improved performance.- **API Integration:** Integrated with
+ third-party APIs for advanced functionalities
+ like AI-based text processing.
+CHALLENGES:
+ 1.pinecone changed it free tier so now I
+ had to make namespaces for each file
+ instead of indexes , also at that time new
+ api was also introduced so it was a bit
+ challengin at first but I navigated through
+ that using google and the documentation
+ 2. During hosting at vercel , i was first
+ hosting it on vercel since its a nextjs
+ application but because of a bug in vercel
+ I was experiencing rate limits everywhere
+ also an error regarding pinecone
+ integration and because of this I choose to
+ host it on render but later on after
+ sometime vercel was fixed though.
+ 3. I faced issue with the SWR as I was
+ working it with the first time I was not
+ configuring right instead of wrapping
+ whole app I was wrapping some
+components which causes cache issues
+ so later on I wrapped the whole app with
+ swr.
+ SWR:
+ SWR(Stale-While-Revalidate) is a React
+ Hooks library for data fetching developed by
+ Vercel. It aims to provide a highly optimized
+ and user-friendly experience for handling
+ remote data. The name "SWR" comes from
+ the caching strategy where data is returned
+ from the cache first (stale), then revalidated
+ with a fresh request.
+ Key Features
+ 1. Caching: SWR caches the data to
+ minimize redundant network requests and
+ improve performance.
+2. Revalidation: It revalidates the data in
+ the background, keeping the UI
+ up-to-date.
+ 3. Focus and Reconnect: SWR
+ automatically revalidates data when the
+ window gains focus or the network
+ reconnects.
+ 4. Mutation: Allows you to mutate the
+ cache data directly, ensuring the UI is
+ immediately updated.
+ 5. Error Handling: Provides mechanisms
+ to handle errors gracefully.
+ 6. Infinite Loading: Supports infinite
+ loading for lists and paginated data.
+ WHYNEXTJS:
+ Next.js offers several features that are
+ particularly well-suited for the **Doctalker**
+ project. Here’s why Next.js is a good choice:- **Server-Side Rendering**: Next.js
+ supports server-side rendering, which means
+pages can be generated dynamically on the
+ server for each request. This is beneficial for
+ delivering up-to-date content and improving
+ performance for the user- **Static Site Generation**: For parts of the
+ site that don't change often, like the home
+ page or static files list, Next.js allows
+ pre-rendering these pages at build time,
+ which can improve loading times and overall
+ performance.
+ ### **2. API Routes**- **Built-In API Routes**: Next.js has built-in
+ support for API routes, which allows you to
+ create backend endpoints within the same
+ project. This is convenient for handling file
+ uploads, querying data, and interacting with
+external services like Pinecone and AWS S3
+ without needing a separate server.
+ ### **4. Performance Optimization**- **Automatic Code Splitting**: Next.js
+ automatically splits your code into smaller
+ bundles, which helps to reduce the initial load
+ time and improve the performance of your
+ app.
+ ### **6. TypeScript Support**- **TypeScript Integration**: Next.js provides
+ robust TypeScript support, making it easier to
+ develop with type safety and ensuring that
+ your code is more reliable and maintainable.
+ ### **7. SEO Optimization**
+- **Head Management**: With Next.js’s
+ `Head` component, you can easily manage
+ and customize the HTML `<head>` for each
+ page, which helps with SEO optimization by- **File Upload Handling**: With API routes
+ and built-in support for handling multipart
+ form data, Next.js makes it straightforward to
+ implement file upload functionality.
